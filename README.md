@@ -42,3 +42,11 @@ If an argument contains spaces it needs to be wrapped in quotation marks to be t
 - API responses are XML -- sorry, that's just the way CCP does it.
 - There is presently no way to list all the APIs with the CLI runner. I intend to implement this in the future as well.
 
+## Additional Resources ##
+
+- [EVE API key](https://support.eveonline.com/api)
+- [EVE Online API Reference](http://wiki.eve-id.net/APIv2_Page_Index)
+- [EVE Online API Authentication](http://wiki.eve-id.net/API#Authentication)
+- [EVEDev Network](http://wiki.eve-id.net/Main_Page)
+- [EVE Online](http://www.eveonline.com/)
+
