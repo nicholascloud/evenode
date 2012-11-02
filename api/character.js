@@ -12,7 +12,6 @@ module.exports = function (config) {
   var api = {
 
     /**
-     * AccountBalance
      * Returns the ISK balance of a character.
      * @see http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML
      * @param characterID
@@ -30,7 +29,6 @@ module.exports = function (config) {
     },
 
     /**
-     * AssetList
      * Returns a list of assets owned by a character.
      * @see http://wiki.eve-id.net/APIv2_Char_AssetList_XML
      * @param characterID
@@ -48,7 +46,6 @@ module.exports = function (config) {
     },
 
     /**
-     * CalendarEventAttendees
      * Returns a list of all invited attendees for a given event.
      * NOTE: A call to char/UpcomingCalendarEvents.xml.aspx must be made prior to calling this API.
      * @see http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML
@@ -69,7 +66,6 @@ module.exports = function (config) {
     },
 
     /**
-     * CharacterSheet
      * Returns attributes relating to a specific character.
      * @see http://wiki.eve-id.net/APIv2_Char_CharacterSheet_XML
      * @param characterID
@@ -87,7 +83,6 @@ module.exports = function (config) {
     },
 
     /**
-     * ContactList
      * Returns the character's contact and watch lists, incl. agents and respective standings set by the character. Also includes that character's corporation and/or alliance contacts.
      * @see http://wiki.eve-id.net/APIv2_Char_ContactList_XML
      * @param characterID
@@ -105,7 +100,6 @@ module.exports = function (config) {
     },
 
     /**
-     * ContactNotifications
      * Lists the notifications received about having been added to someone's contact list.
      * @see http://wiki.eve-id.net/APIv2_Char_ContactNotifications_XML
      * @param characterID
@@ -123,7 +117,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Contracts
      * Lists the personal contracts for a character.
      * @see http://wiki.eve-id.net/APIv2_Char_Contracts_XML
      * @param characterID
@@ -143,7 +136,6 @@ module.exports = function (config) {
     },
 
     /**
-     * ContractItems
      * Lists items that a specified contract contains.
      * @see http://wiki.eve-id.net/APIv2_Char_ContractItems_XML
      * @param characterID
@@ -163,14 +155,13 @@ module.exports = function (config) {
     },
 
     /**
-     * ContractBids
      * Lists the latest bids that have been made to any recent auctions.
      * @see http://wiki.eve-id.net/APIv2_Char_ContractBids_XML
      * @param characterID
      * @param callback
      */
     contractBids: function (characterID, callback) {
-      var path = '/char/ContractItems.xml.aspx';
+      var path = '/char/ContractBids.xml.aspx';
       var data = {
         keyID: config.keyID,
         vCode: config.vCode,
@@ -181,7 +172,6 @@ module.exports = function (config) {
     },
 
     /**
-     * FacWarStats
      * If the character is enlisted in Factional Warfare, this will return the faction the character is enlisted in,
      * the current rank and the highest rank the character ever had attained, and how many kills and victory points
      * the character obtained yesterday, in the last week, and total. Otherwise returns an error code.
@@ -201,18 +191,12 @@ module.exports = function (config) {
     },
 
     /**
-     * IndustryJobs
      * @see http://wiki.eve-id.net/APIv2_Char_IndustryJobs_XML
      * @param characterID
-     * @param jobScope ['char'|'corp']
      * @param callback
      */
-    industryJobs: function (characterID, jobScope, callback) {
-      if (['char', 'corp'].indexOf(jobScope) < 0) {
-        return callback('invalid job scope specified');
-      }
-
-      var path = '/' + jobScope + '/FacWarStats.xml.aspx';
+    industryJobs: function (characterID, callback) {
+      var path = '/char/IndustryJobs.xml.aspx';
       var data = {
         keyID: config.keyID,
         vCode: config.vCode,
@@ -223,7 +207,6 @@ module.exports = function (config) {
     },
 
     /**
-     * KillLog
      * Returns a list of kills where this character received the final blow and losses of this character.
      * @see http://wiki.eve-id.net/APIv2_Char_KillLog_XML
      * @param characterID
@@ -251,7 +234,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Locations
      * Call will return the items name (or its type name if no user defined name exists) as well as their x,y,z
      * coordinates. Coordinates should all be 0 for valid locations located inside of stations.
      * @see http://wiki.eve-id.net/APIv2_Char_Locations_XML
@@ -272,7 +254,6 @@ module.exports = function (config) {
     },
 
     /**
-     * MailBodies
      * Returns the bodies of headers that have already been fetched with the MailMessages call. It will also return
      * a list of missing IDs that could not be accessed. Bodies cannot be accessed if you have not called for
      * their headers recently.
@@ -294,7 +275,6 @@ module.exports = function (config) {
     },
 
     /**
-     * MailingLists
      * Returns an XML document listing all mailing lists the character is currently a member of.
      * @see http://wiki.eve-id.net/APIv2_Char_mailinglists_XML
      * @param characterID
@@ -312,7 +292,6 @@ module.exports = function (config) {
     },
 
     /**
-     * MailMessages
      * Returns the message headers for mail.
      * @see http://wiki.eve-id.net/APIv2_Char_MailMessages_XML
      * @param characterID
@@ -330,7 +309,6 @@ module.exports = function (config) {
     },
 
     /**
-     * MarketOrders
      * Returns a list of market orders for your character.
      * @see http://wiki.eve-id.net/APIv2_Char_MarketOrders_XML
      * @param characterID
@@ -358,7 +336,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Medals
      * Returns a list of medals the character has.
      * @see http://wiki.eve-id.net/APIv2_Char_Medals_XML
      * @param characterID
@@ -376,7 +353,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Notifications
      * Returns the message headers for notifications.
      * @see http://wiki.eve-id.net/APIv2_Char_Notifications_XML
      * @param characterID
@@ -394,7 +370,6 @@ module.exports = function (config) {
     },
 
     /**
-     * NotificationTexts
      * Returns the message bodies for notifications. Headers need to be requested via /char/Notifications.xml.aspx first.
      * @see http://wiki.eve-id.net/APIv2_Char_NotificationTexts_XML
      * @param characterID
@@ -414,7 +389,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Research
      * Returns information about agents character is doing research with.
      * @see http://wiki.eve-id.net/APIv2_Char_Research_XML
      * @param characterID
@@ -432,7 +406,6 @@ module.exports = function (config) {
     },
 
     /**
-     * SkillInTraining
      * Returns XML document of the skill the character is currently training.
      * @see http://wiki.eve-id.net/APIv2_Char_SkillInTraining_XML
      * @param characterID
@@ -450,7 +423,6 @@ module.exports = function (config) {
     },
 
     /**
-     * SkillQueue
      * Returns XML document containing the skill queue of the character.
      * @see http://wiki.eve-id.net/APIv2_Char_SkillQueue_XML
      * @param characterID
@@ -468,7 +440,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Standings
      * Returns the standings towards a character from agents, NPC corporations and factions. Since Tyrannis no longer
      * provides standings towards characters or entities, use the Contact List API instead.
      * @param characterID
@@ -486,7 +457,6 @@ module.exports = function (config) {
     },
 
     /**
-     * UpcomingCalendarEvents
      * Returns a list of all upcomming calendar events for a given character.
      * @see http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML
      * @param characterID
@@ -504,7 +474,6 @@ module.exports = function (config) {
     },
 
     /**
-     * WalletJournal
      * Returns a list of journal transactions for character.
      * @see http://wiki.eve-id.net/APIv2_Char_JournalEntries_XML
      * @param characterID
@@ -552,7 +521,6 @@ module.exports = function (config) {
     },
 
     /**
-     * WalletTransactions
      * Returns market transactions for a character.
      * @see http://wiki.eve-id.net/APIv2_Char_MarketTransactions_XML
      * @param characterID
