@@ -1,3 +1,5 @@
+'use strict';
+
 var endpoint = require('./api-endpoint');
 
 /**
@@ -26,7 +28,7 @@ module.exports = function (config) {
     },
 
     /**
-     * CharacterID (http://wiki.eve-id.net/APIv2_Eve_CharacterID_XML)
+     * @see http://wiki.eve-id.net/APIv2_Eve_CharacterID_XML
      * @param names Comma-separated list of character names to query
      * @param callback
      */
@@ -55,7 +57,7 @@ module.exports = function (config) {
     },
 
     /**
-     * CharacterName (http://wiki.eve-id.net/APIv2_Eve_CharacterName_XML)
+     * @see http://wiki.eve-id.net/APIv2_Eve_CharacterName_XML
      * @param ids Comma-separated list of ownerIDs (characterID, agentID, corporationID, allianceID, or factionID) and typeIDs to query
      * @param callback
      */
@@ -63,7 +65,7 @@ module.exports = function (config) {
       var path = '/eve/CharacterName.xml.aspx';
 
       if (Array.isArray(ids)) {
-        ids = names.join(',');
+        ids = ids.join(',');
       }
 
       var data = {
@@ -102,7 +104,6 @@ module.exports = function (config) {
     },
 
     /**
-     * RefTypes
      * Returns a list of transaction types used in the Journal Entries
      * @param callback
      */
@@ -114,7 +115,6 @@ module.exports = function (config) {
     },
 
     /**
-     * SkillTree
      * XML of currently in-game skills (including unpublished skills).
      * @see http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML
      * @param callback
@@ -127,7 +127,6 @@ module.exports = function (config) {
     },
 
     /**
-     * TypeName
      * Returns the name associated with a typeID.
      * @see http://wiki.eve-id.net/APIv2_Eve_TypeName_XML
      * @param ids Comma-separated list of typeIDs to query
@@ -137,7 +136,7 @@ module.exports = function (config) {
       var path = '/eve/TypeName.xml.aspx';
 
       if (Array.isArray(ids)) {
-        ids = names.join(',');
+        ids = ids.join(',');
       }
 
       var data = {

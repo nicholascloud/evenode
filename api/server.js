@@ -1,3 +1,5 @@
+'use strict';
+
 var endpoint = require('./api-endpoint');
 
 /**
@@ -10,7 +12,6 @@ module.exports = function (config) {
   var api = {
 
     /**
-     * FacWarSystems
      * Returns current Tranquility status and number of players online.
      * @see http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML
      * @param callback

@@ -1,3 +1,5 @@
+'use strict';
+
 var endpoint = require('./api-endpoint');
 
 /**
@@ -10,7 +12,6 @@ module.exports = function (config) {
   var api = {
 
     /**
-     * FacWarSystems
      * Returns a list of contestable solarsystems and the NPC faction currently occupying them. It should be noted that this file only returns a non-zero ID if the occupying faction is not the sovereign faction.
      * @see http://wiki.eve-id.net/APIv2_Factional_Warfare_Occupancy_XML
      * @param callback
@@ -23,7 +24,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Jumps
      * Note that only systems with jumps are shown, if the system has no jumps, it's not listed
      * @see http://wiki.eve-id.net/APIv2_Map_Jumps_XML
      * @param callback
@@ -36,7 +36,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Kills
      * Returns the number of kills in solarsystems within the last hour. Only solar system where kills have been made are listed, so assume zero in case the system is not listed.
      * @see http://wiki.eve-id.net/APIv2_Map_Kills_XML
      * @param callback
@@ -49,7 +48,6 @@ module.exports = function (config) {
     },
 
     /**
-     * Sovereignty
      * Returns a list of solarsystems and what faction or alliance controls them.
      * @see http://wiki.eve-id.net/APIv2_Map_Sovereignty_XML
      * @param callback
@@ -62,7 +60,6 @@ module.exports = function (config) {
     },
 
     /**
-     * SovereigntyStatus
      * Returns a list of all sovereignty structures in EVE.
      * @see http://wiki.eve-id.net/APIv2_Map_Sovereignty_Status_XML
      * @param callback
