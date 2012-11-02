@@ -32,10 +32,6 @@ fs.readFile(path.join(__dirname, 'config.json'), function (err, content) {
 
   var func = evenode(config)[namespace][method];
 
-  if (func.length > apiArgs.length) {
-    return console.error('invalid number of arguments');
-  }
-
   func.apply(null, apiArgs);
 });
 

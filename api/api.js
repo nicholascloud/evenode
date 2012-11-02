@@ -1,3 +1,5 @@
+'use strict';
+
 var endpoint = require('./api-endpoint');
 
 /**
