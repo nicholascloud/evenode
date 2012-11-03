@@ -49,4 +49,5 @@ If an argument contains spaces it needs to be wrapped in quotation marks to be t
 - [EVE Online API Authentication](http://wiki.eve-id.net/API#Authentication)
 - [EVEDev Network](http://wiki.eve-id.net/Main_Page)
 - [EVE Online](http://www.eveonline.com/)
+- #eve-dev on irc.coldfront.net:6667
 
